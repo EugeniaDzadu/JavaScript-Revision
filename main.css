@@ -1,0 +1,144 @@
+/* Reset basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling when loader is active */
+}
+
+/* Loader styles */
+.loader {
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #3498db;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    display: none; 
+    position: relative;
+    top: 15%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    z-index: 200000;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fixed position when loader is active */
+.fixed-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Increased for larger verses */
+    position: relative; /* To ensure it stays fixed */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2a8ccb;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2a8ccb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #226ba1;
+}
+
+#previewContainer {
+    margin-top: 20px;
+    text-align: center;
+    max-height: 300px; /* the max height for larger verses */
+    overflow-y: auto;  /* scrolling for large content */
+}
+
+#reference {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#preview {
+    display: block;
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    white-space: pre-wrap; /* Allows wrapping for long verses */
+    max-width: 100%;
+    overflow-wrap: break-word;
+    min-height: 150px; /* Added minimum height to handle larger content */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #content {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="text"], button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"], button {
+        font-size: 12px;
+    }
+}
