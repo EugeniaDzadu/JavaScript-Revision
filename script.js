@@ -15,7 +15,7 @@ document.getElementById("btnSearch").addEventListener("click", function() {
 
     // Check if the trimmed input is empty
     if (verse.length > 0) {
-        console.log('hello');
+        // console.log('hello');
         
         // Fetch the verse from API
         fetch(`https://bible-api.com/${verse}`)
